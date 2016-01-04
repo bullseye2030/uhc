@@ -55,7 +55,7 @@
     
     function loadGame(id) {
       if (!gameInfo.hasOwnProperty(id)) {
-        $("#container").html("<div class=\"alert alert-danger\">That game doesn't exist.</div>")
+        $("#main").html("<div class=\"alert alert-danger\">That game doesn't exist.</div>")
         return;
       }
       game = gameInfo[id];
