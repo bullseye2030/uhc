@@ -44,7 +44,11 @@
     function loadGame(id) {
       game = gameInfo[id];
       $("#name").text(game.name);
-      $("#season").text(game.season);
+      $("#season").text("Season" + game.season);
+      
+      game.participants.forEach(function(p) {
+        $("tbody").append("<tr><td>" + p.position + "</td><td>" + p.name + "</td><td>" + "?" + "</td><td>" + p.kills + "</td></tr>")
+      });
     }
     
     $(function() {
