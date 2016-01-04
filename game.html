@@ -36,4 +36,19 @@
       </table>
     </div>
   </body>
+  
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script>
+    var gameInfo;
+    
+    function loadGame(id) {
+      
+    }
+    
+    $(function() {
+      $.getJson("stats.json", function(d) {
+        gameInfo = d;
+      })
+    });
+  </script>
 </html>
