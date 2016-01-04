@@ -54,6 +54,11 @@
     $(function() {
       $.getJSON("stats.json", function(d) {
         gameInfo = d;
+        if (window.location.search.substring(1).indexOf("gameID=")) {
+          loadGame(window.location.search.substring(8));
+        } else {
+          window.location.search.substring(0);
+        }
       });
     });
   </script>
