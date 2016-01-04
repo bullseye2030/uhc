@@ -23,7 +23,9 @@
       
       <span class="label label-info" id="uhc-type">UHC Type</span>
       
-      <table class="table sortable-theme-bootstrap" data-sortable>
+      <h2>Players</h2>
+      
+      <table id="players" class="table sortable-theme-bootstrap" data-sortable>
         <thead>
           <tr>
             <th data-sortable-type="numeric">#</th>
@@ -35,6 +37,19 @@
         
         <tbody>
         
+        </tbody>
+      </table>
+      
+      <h2>Players (didn't compete)</h2>
+      <table id="didnotcompete" class="table sortable-theme-bootstrap" data-sortable>
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th data-sortable="false">Reason</th>
+          </tr>
+        </thead>
+        <tbody>
+          
         </tbody>
       </table>
     </div>
@@ -76,7 +91,7 @@
       }
       
       game.participants.forEach(function(p) {
-        $("tbody").append("<tr id=\"" + p.position +"\"><td>" + p.position + "</td><td><img class=\"img-rounded\" src=\"https://crafatar.com/avatars/" + p.uuid + "?size=20\"> " + p.name + "</td><td>" + p.death + "</td><td>" + p.kills + "</td></tr>")
+        $("#players tbody").append("<tr id=\"" + p.position +"\"><td>" + p.position + "</td><td><img class=\"img-rounded\" src=\"https://crafatar.com/avatars/" + p.uuid + "?size=20\"> " + p.name + "</td><td>" + p.death + "</td><td>" + p.kills + "</td></tr>")
         if (localStorage.getItem("no_colour_code") != "true") {
           switch (p.deathtype) {
             case "none":
@@ -93,6 +108,10 @@
               break;
           }
         }
+      });
+      
+      game.didnotcompete.forEach(function(p) {
+        $("#didnotcompete tbody").append("<tr><td><img class=\"img-rounded\" src=\"https://crafatar.com/avatars/" + p.uuid + "?size=20\"> " + p.name + "</td><td>" + p.reason + "</td></tr>")
       });
     }
     
