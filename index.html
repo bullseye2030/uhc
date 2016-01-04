@@ -33,8 +33,8 @@
       $.getJSON("stats.json", function(d) {
         gameInfo = d;
         
-        gameInfo.forEach(function(g) {
-          $(".list-group").append("<a class=\"list-group-item\">" + g.name + "</a>")
+        gameInfo.forEach(function(g, i) {
+          $(".list-group").append("<a href=\"game.html?gameID=" + i + "\" class=\"list-group-item\">" + g.name + "</a>")
         });
       });
     });
