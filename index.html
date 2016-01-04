@@ -34,7 +34,7 @@
         gameInfo = d;
         
         gameInfo.forEach(function(g, i) {
-          $(".list-group").append("<a href=\"game.html?gameID=" + i + "\" class=\"list-group-item\">" + g.name + "</a>")
+          $(".list-group").append("<a href=\"game.html?gameID=" + i + "\" class=\"list-group-item\">" + g.name + " <span class=\"text-muted\">Season " + g.season + "</span></a>")
         });
       });
     });
