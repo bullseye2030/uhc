@@ -57,7 +57,10 @@
       $("#season").text("Season " + game.season);
       
       game.participants.forEach(function(p) {
-        $("tbody").append("<tr><td>" + p.position + "</td><td>" + p.name + "</td><td>" + "?" + "</td><td>" + p.kills + "</td></tr>")
+        $("tbody").append("<tr id=\"" + p.position +"\"><td>" + p.position + "</td><td>" + p.name + "</td><td class=\"death\">" + p.death + "</td><td>" + p.kills + "</td></tr>")
+        if (p.position == 1) {
+          $("#" + p.position + " .death").addClass("text-muted");
+        }
       });
     }
     
