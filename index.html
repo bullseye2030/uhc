@@ -17,8 +17,27 @@
         </div>
       </div>
     </nav>
+    
     <div class="container">
-      
+      <div class="list-group">
+        
+      </div>
     </div>
+    
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdn.rawgit.com/zudoo/sortable/master/js/sortable.min.js"></script>
+  <script>
+    var gameInfo;
+    
+    $(function() {
+      $.getJSON("stats.json", function(d) {
+        gameInfo = d;
+        
+        gameInfo.forEach(function(g) {
+          $(".list-group").append("<a class=\"list-group-item\">" + g.name + "</a>")
+        });
+      });
+    });
+  </script>
   </body>
 </html>
