@@ -24,6 +24,7 @@
       <table class="table sortable-theme-bootstrap" data-sortable>
         <thead>
           <tr>
+            <th data-sortable="false"></th>
             <th data-sortable-type="numeric">#</th>
             <th>Player</th>
             <th data-sortable="false">Cause of Death</th>
@@ -59,7 +60,7 @@
       $("#season").text("Season " + game.season);
       
       game.participants.forEach(function(p) {
-        $("tbody").append("<tr id=\"" + p.position +"\"><td>" + p.position + "</td><td>" + p.name + "</td><td>" + p.death + "</td><td>" + p.kills + "</td></tr>")
+        $("tbody").append("<tr id=\"" + p.position +"\"><td><img src=\https://crafatar.com/avatars/" + p.name + "?size=20\"></td><td>" + p.position + "</td><td>" + p.name + "</td><td>" + p.death + "</td><td>" + p.kills + "</td></tr>")
         if (localStorage.getItem("no_colour_code") != "true") {
           switch (p.deathtype) {
             case "none":
