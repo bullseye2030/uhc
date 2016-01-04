@@ -21,6 +21,8 @@
     <div class="container" id="main">
       <h1><span id="name">Loading</span> <small id="season">info</small></h1>
       
+      <span class="label label-info" id="uhc-type">UHC Type</span>
+      
       <table class="table sortable-theme-bootstrap" data-sortable>
         <thead>
           <tr>
@@ -58,9 +60,20 @@
         $("#main").html("<div class=\"alert alert-danger\">That game doesn't exist.</div>")
         return;
       }
+      
       game = gameInfo[id];
       $("#name").text(game.name);
       $("#season").text("Season " + game.season);
+      
+      switch (game.type) {
+        case "cube":
+          $("#uhc-type").text("Cube UHC / Minecraft: Ultra Hardcore")
+          break;
+          
+        default:
+          $("#uhc-type").text("Unknown UHC Type")
+          break;
+      }
       
       game.participants.forEach(function(p) {
         $("tbody").append("<tr id=\"" + p.position +"\"><td>" + p.position + "</td><td><img class=\"img-rounded\" src=\"https://crafatar.com/avatars/" + p.uuid + "?size=20\"> " + p.name + "</td><td>" + p.death + "</td><td>" + p.kills + "</td></tr>")
