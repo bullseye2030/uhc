@@ -42,13 +42,16 @@
     var gameInfo;
     
     function loadGame(id) {
-      
+      game = gameInfo[id];
+      $("#name").text(game.name);
+      $("#season").text(game.season);
     }
     
     $(function() {
       $.getJSON("stats.json", function(d) {
         gameInfo = d;
-      })
+        loadGame(window.location.hash.replace("#", ""));
+      });
     });
   </script>
 </html>
