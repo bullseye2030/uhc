@@ -54,7 +54,6 @@
     $(function() {
       $.getJSON("stats.json", function(d) {
         gameInfo = d;
-        loadGame(window.location.hash.replace("#", ""));
       });
     });
   </script>
