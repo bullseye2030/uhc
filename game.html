@@ -18,7 +18,7 @@
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="container" id="main">
       <h1><span id="name">Loading</span> <small id="season">info</small></h1>
       
       <table class="table sortable-theme-bootstrap" data-sortable>
@@ -54,12 +54,11 @@
     }
     
     function loadGame(id) {
-      try {
-        game = gameInfo[id];
-      } catch (e) {
-        $(".container").html("<div class=\"alert alert-danger\">That game doesn't exist.</div>")
+      if (!gameInfo.hasOwnProperty(id)) {
+        $("#container").html("<div class=\"alert alert-danger\">That game doesn't exist.</div>")
         return;
       }
+      game = gameInfo[id];
       $("#name").text(game.name);
       $("#season").text("Season " + game.season);
       
