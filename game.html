@@ -59,7 +59,7 @@
       $("#season").text("Season " + game.season);
       
       game.participants.forEach(function(p) {
-        $("tbody").append("<tr id=\"" + p.position +"\"><td>" + p.position + "</td><td><img src=\"https://crafatar.com/avatars/" + p.uuid + "?size=20\"> " + p.name + "</td><td>" + p.death + "</td><td>" + p.kills + "</td></tr>")
+        $("tbody").append("<tr id=\"" + p.position +"\"><td>" + p.position + "</td><td><img class=\"img-thumbnail\" src=\"https://crafatar.com/avatars/" + p.uuid + "?size=20\"> " + p.name + "</td><td>" + p.death + "</td><td>" + p.kills + "</td></tr>")
         if (localStorage.getItem("no_colour_code") != "true") {
           switch (p.deathtype) {
             case "none":
