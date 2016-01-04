@@ -60,10 +60,19 @@
       
       game.participants.forEach(function(p) {
         $("tbody").append("<tr id=\"" + p.position +"\"><td>" + p.position + "</td><td>" + p.name + "</td><td>" + p.death + "</td><td>" + p.kills + "</td></tr>")
-        if (p.position == 1) {
-          $("#" + p.position).addClass("success");
-        } else {
-          
+        switch (p.deathtype) {
+          case "none":
+            $("#" + p.position).addClass("success");
+            break;
+          case "pve":
+            $("#" + p.position).addClass("info");
+            break;
+          case "pvp":
+            $("#" + p.position).addClass("warning");
+            break;
+          case "suicide":
+            $("#" + p.position).addClass("danger");
+            break;
         }
       });
     }
