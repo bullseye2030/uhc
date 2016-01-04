@@ -54,7 +54,12 @@
     }
     
     function loadGame(id) {
-      game = gameInfo[id];
+      try {
+        game = gameInfo[id];
+      } catch (e) {
+        $(".container").html("<div class=\"alert alert-danger\">That game doesn't exist.</div>")
+        return;
+      }
       $("#name").text(game.name);
       $("#season").text("Season " + game.season);
       
