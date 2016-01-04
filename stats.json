@@ -2,6 +2,7 @@
   {
     "name":"Minecraft: Ultra Hardcore",
     "season":1,
+    "type":"cube",
     "episodes":9,
     "participants":[
       {"uuid":"5122efdb-aee9-4c49-bcdd-dceb168fb4c1","name":"Graser10","kills":1,"position":1,"death":"Winner","deathtype":"none"},
