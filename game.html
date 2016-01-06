@@ -91,7 +91,7 @@
       }
       
       game.participants.forEach(function(p) {
-        $("#players tbody").append("<tr id=\"" + p.uuid +"\"><td>" + p.position + "</td><td><img class=\"img-rounded\" src=\"https://crafatar.eu/avatars/" + p.uuid + "?size=20\"> " + p.name + "</td><td>" + p.death + "</td><td>" + p.kills + "</td></tr>")
+        $("#players tbody").append("<tr id=\"" + p.uuid +"\"><td>" + p.position + "</td><td><img class=\"img-rounded\" src=\"https://cravatar.eu/helmavatar/" + p.uuid + "/20.png\"> " + p.name + "</td><td>" + p.death + "</td><td>" + p.kills + "</td></tr>")
         if (localStorage.getItem("no_colour_code") != "true") {
           switch (p.deathtype) {
             case "none":
