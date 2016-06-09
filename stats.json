@@ -41,7 +41,7 @@
       {"uuid":"1e565e5c-f0c9-406d-9ea7-f2076f5a5580","name":"Tofuugaming","kills":1,"position":1,"death":"None","deathtype":"none"},
       {"uuid":"538e3eb3-c2b9-491c-b694-ad0afdf0ea55","name":"Dowsey","kills":0,"position":21,"death":"Burnt to death","deathtype":"pve"},
       {"uuid":"e8a826fe-726b-4801-9a0e-9d12cbc2af7c","name":"ItsKricken","kills":0,"position":3,"death":"Shot by Tofuugaming","deathtype":"pvp"}
-    ],
-    "didnotcompete":[]
+      {"uuid":"","name":"KermitPlaysMC","kills":0,"position":13,"death":"Slain by Flexvoid","deathtype":"pvp"}
+    "didnotcompete":[
   }
 ]
